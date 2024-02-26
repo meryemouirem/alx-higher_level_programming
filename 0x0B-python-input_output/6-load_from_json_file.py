@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Defines a base geometry class BaseGeometry."""
+"""Defines a JSON file-reading function."""
+import json
 
 
-class BaseGeometry:
-    """Represent base geometry."""
-
-    def area(self):
-        """Not implemented."""
-        raise Exception("area() is not implemented")
+def load_from_json_file(filename):
+    """Create a Python object from a JSON file."""
+    with open(filename) as f:
+        return json.load(f)
