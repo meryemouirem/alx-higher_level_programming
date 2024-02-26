@@ -1,17 +1,15 @@
 #!/usr/bin/python3
-"""Defines a class-checking function."""
+"""Defines a file-writing function."""
 
 
-def is_same_class(obj, a_class):
-    """Check if an object is exactly an instance of a given class.
+def write_file(filename="", text=""):
+    """Write a string to a UTF8 text file.
 
     Args:
-        obj (any): The object to check.
-        a_class (type): The class to match the type of obj to.
+        filename (str): The name of the file to write.
+        text (str): The text to write to the file.
     Returns:
-        If obj is exactly an instance of a_class - True.
-        Otherwise - False.
+        The number of characters written.
     """
-    if type(obj) == a_class:
-        return True
-    return False
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
